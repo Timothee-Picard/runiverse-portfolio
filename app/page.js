@@ -1,103 +1,61 @@
 import Image from "next/image";
+import Counter from "@/components/counter";
+import Hero from "@/components/hero";
+import CardList from "@/components/cardList";
+import Section from "@/components/section";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <div>
+       <div className="flex flex-col items-center justify-center p-6 w-fit">
+           <Image className="-my-10" src="/logo.png" alt="logo" width={200} height={200} />
+           <span className="uppercase">Runiverse</span>
+       </div>
+        <Counter />
+        <Hero />
+        <CardList />
+        <div className="flex flex-col gap-20 mt-20">
+            <h2 className="text-5xl font-bold uppercase text-center">choisis ton univers</h2>
+            <Section
+                title="Necropole"
+                description="Le monde est tombé, les rues envahies par des zombies affamés. Chaque pas que tu fais te rapproche du danger, mais aussi de la liberté. Les morts-vivants te traquent, le sol est boueux, le temps est contre toi. Mais si tu veux survivre, tu n’as pas le choix : continue à courir. Les zombies ne s’arrêtent jamais, et toi non plus. Fuir ou mourir. À toi de décider."
+                anchor="necropole"
+                image="bg-necropole.png"
+                color="#9d1b24"
+                right
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Section
+                title="Exode"
+                description="Les villes ne sont plus que des ruines, englouties par le silence et la poussière. Le vent siffle à travers les carcasses de béton, portant les échos d’un monde disparu. Derrière toi, le danger rôde—famine, pillards, tempêtes. Devant toi, l’inconnu. Le monde a pris fin. Mais ton histoire, elle, ne fait que commencer."
+                anchor="exode"
+                image="bg-exode.png"
+                color="#017425"
+            />
+            <Section
+                title="Fuite"
+                anchor="fuite"
+                description="Les sirènes hurlent derrière toi, tes poumons brûlent, ton cœur bat à tout rompre. Ruelles sombres, avenues désertes, chaque pas peut te sauver… ou te condamner. Pourquoi toi ? Quel secret cherches-tu à percer ? Pas le temps d’y penser. Seule compte la course. Si tu t’arrêtes, c’est fini."
+                image="bg-fuite.png"
+                color="#0448a5"
+                right
+            />
+            <Section
+                title="Spectre"
+                anchor="spectre"
+                image="bg-necropole.png"
+            />
+            <Section
+                title="légende"
+                anchor="legende"
+                image="bg-necropole.png"
+                right
+            />
+            <Section t
+                     itle="épopée"
+                     anchor="epopee"
+                     image="bg-necropole.png"
+            />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
