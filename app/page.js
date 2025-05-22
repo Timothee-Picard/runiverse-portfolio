@@ -39,7 +39,7 @@ export default function Home() {
                 color="#0448a5"
                 right
             />
-            <Section
+           {/* <Section
                 title="Spectre"
                 anchor="spectre"
                 image="bg-necropole.png"
@@ -54,7 +54,7 @@ export default function Home() {
                      itle="épopée"
                      anchor="epopee"
                      image="bg-necropole.png"
-            />
+            />*/}
         </div>
     </div>
   );
